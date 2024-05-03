@@ -26,4 +26,9 @@ $(document).ready(function(){
             $('html').attr('data-theme' , 'light');
         }
     );
+    
+    $('#slides .slider').slick({
+        dots: true,
+    });
+    
 });
