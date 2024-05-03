@@ -1,6 +1,4 @@
-$(document).ready(function(){
-    $("#header").load("./inc/header.html");
-    $("#footer").load("./inc/footer.html");   
+$(document).ready(function(){      
     $.fn.clickToggle = function(func1, func2) {
         var funcs = [func1, func2];
         this.data('toggleclicked', 0);
@@ -20,13 +18,11 @@ $(document).ready(function(){
             $('#header').removeClass('fixed');
         }
     });
-    $('#theme-toggle').clickToggle(
-        function() {   
-            console.log('dark');
+    $('.theme-toggle').clickToggle(
+        function() {               
             $('html').attr('data-theme' , 'dark');
         },
-        function() {
-            console.log('light');
+        function() {            
             $('html').attr('data-theme' , 'light');
         }
     );

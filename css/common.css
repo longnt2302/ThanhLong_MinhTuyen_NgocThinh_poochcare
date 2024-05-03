@@ -163,7 +163,7 @@ a {
     cursor: pointer;
 }
 
-#header .navbar .extend .theme:hover {
+#header .navbar .extend .theme-toggle:hover {
     cursor: pointer;
 }
 
@@ -292,7 +292,7 @@ a {
         display: none;
     }
 
-    #header .navbar .nav-item.theme {
+    #header .navbar .nav-item.theme-toggle {
         display: none;
     }
 
