@@ -1,4 +1,4 @@
-$(document).ready(function(){      
+$(document).ready(function(){
     $.fn.clickToggle = function(func1, func2) {
         var funcs = [func1, func2];
         this.data('toggleclicked', 0);
@@ -19,16 +19,18 @@ $(document).ready(function(){
         }
     });
     $('.theme-toggle').clickToggle(
-        function() {               
+        function() {
             $('html').attr('data-theme' , 'dark');
         },
-        function() {            
+        function() {
             $('html').attr('data-theme' , 'light');
         }
     );
-    
+
     $('#slides .slider').slick({
         dots: true,
     });
-    
+
+    $('.count_num').countUp();
+
 });
