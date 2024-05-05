@@ -54,6 +54,11 @@ p {
     color: var(--text-color);
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .sp {
     display: none;
 }
@@ -484,6 +489,36 @@ a.readmore:hover{
 
 .services_item h4:hover {
     color: var(--primary-color);
+}
+
+/* offer */
+.offer_content .image img {
+    width: 100%;
+}
+
+.offer_content .content p {
+    font-size: 1em;
+}
+
+.offer_content .content ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.offer_content .content ul li:before {
+    content: "\f00c";
+    font-family: FontAwesome;
+    font-size: 10px;
+    color: var(--primary-color);
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    line-height: 26px;
+    border-radius: 100%;
+    background-color: var(--bg-light);
+    margin-right: 10px;
 }
 
 /************************* RESPONSIVE *************************/
