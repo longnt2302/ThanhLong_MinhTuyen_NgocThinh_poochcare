@@ -95,6 +95,10 @@ a.readmore:hover{
     color: var(--primary-color);
 }
 
+iframe {
+    width: 100%;
+}
+
 /* header */
 #header {
     background-color: var(--bg-color);
@@ -103,7 +107,7 @@ a.readmore:hover{
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
     position: fixed;
     width: 100%;    
-    z-index: 9999;
+    z-index: 10;
     transition: .5s all;
     top: 0;
     left: 0;
@@ -663,6 +667,306 @@ a.readmore:hover{
 #videos .video_content {
     width: 80%;
     margin: 0 auto;
+}
+
+#videos .video {
+    position: relative;
+}
+
+#videos .video .ico-play {
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    transition: 0.2s all;
+    z-index: 1;
+}
+
+#videos .video .ring {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1);    
+    border-radius: 100%;
+    transition: 0.2s all;
+}
+
+#videos .video .ring1 {
+    background-color: #189A46;
+    animation: 1.2s ringring1 linear 1.2s infinite;
+}
+
+#videos .video .ring2 {
+    background-color: rgb(24 154 70 / 40%);
+    animation: 1s ringring2 linear 1s infinite;
+}
+
+#videos .video .ico-play:hover{
+    cursor: pointer;
+    transform: translate(-50%,-50%) scale(1.2);
+}
+
+.modal1 .modal-dialog {
+    max-width: 750px;
+}
+
+.modal1 iframe {
+    height: 500px;
+}
+
+.modal1 .modal-content {
+    height: 400px;
+    background: transparent;
+    border: none;
+    z-index: 30;
+}
+
+.modal1 .close {
+    text-align: right;
+    color: white;
+    font-size: 32px;    
+}
+
+div#modal-video.show:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 80%);
+    z-index: 20;
+}
+
+@keyframes ringring1 {
+    from {
+        width: 55px;
+        height: 55px;
+        opacity: 1;
+    }
+    to {
+        width: 85px;
+        height: 85px;
+        opacity: 0;
+    }
+}
+
+@keyframes ringring2 {
+    from {
+        width: 55px;
+        height: 55px;
+        opacity: 1;
+    }
+    to {
+        width: 115px;
+        height: 115px;
+        opacity: 0;
+    }
+}
+
+.testimonials_content .testimonials_item {
+    padding: 10px;
+}
+
+.testimonials_content .testimonials_item .item_content {
+    display: block;
+    margin: 0;
+    padding: 40px 30px;
+    position: relative;
+    background: var(--bg-color);
+    border-radius: 10px;    
+}
+
+.testimonials_content .testimonials_item blockquote {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    position: relative;
+    margin-bottom: 1.5em;
+}
+
+.testimonials_content .testimonials_item blockquote q {
+    font-size: 1.2em;
+    line-height: 28px;
+    color: var(--para-color);
+}
+
+.testimonials_content .testimonials_item blockquote q::before {
+    font-size: 50px;
+    color: var(--primary-color);
+    line-height: .8;
+    padding-top: 8px;
+    font-weight: 600;
+    display: inline-block;
+    font-family: "Merriweather", serif;
+}
+
+.testimonials_item .item_info img {
+    width: 70px;
+    border-radius: 100%;
+}
+
+.testimonials_item .item_info .detail {
+    margin-left: 20px;
+}
+
+.testimonials_item .item_info .detail .name{
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.testimonials_item .item_info .detail .place {
+    color: #777;
+    font-size: 17px;
+    font-style: normal;
+    margin-bottom: 0;
+    text-align: left;
+    opacity: 0.8;
+}
+
+#testimonials .testimonials_carousel .slick-dots {
+    bottom: -50px;
+}
+
+#testimonials .testimonials_carousel .slick-dots li {
+    width: 25px;
+}
+
+#testimonials .testimonials_carousel .slick-dots li button:before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+    background-color: #d8d8d8;
+    border-radius: 100%;
+}
+
+#testimonials .testimonials_carousel .slick-dots li.slick-active button:before {
+    background-color: #189A46;
+    width: 30px;
+    border-radius: 25px;
+}
+
+#testimonials .testimonials_carousel .slick-dots li button:hover:before {
+    background-color: #189A46;
+    width: 30px;
+    border-radius: 25px;
+}
+
+/* contact */
+.contact_content {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.contact_form form input[type="email"] {
+    font-size: 16px;
+    color: var(--title-color);
+    border-radius: 10px;
+    padding: 0px 20px;
+    height: 60px;
+    background: #fff;
+    height: 60px;
+    outline: none;    
+}
+
+.contact_form form input[type="email"]:focus {
+    border-color: #189A46;
+    box-shadow: none;
+}
+
+.contact_form form button {
+    padding: 15px 35px;
+    font-size: 18px;
+    line-height: 28px;
+    text-transform: capitalize;
+    font-weight: 400;
+    transition: 0.3s ease-in;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #189A46;
+}
+
+/* back to top */
+a.back-to-top {    
+    position: fixed;
+    bottom: 50px;
+    right: 15px;
+    transition: 0.3s all;
+    opacity: 0;
+    visibility: hidden;
+}
+a.back-to-top i {
+    color: white;    
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: var(--primary-color);    
+    transition: 0.3s all;    
+}
+
+a.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+a.back-to-top:hover i {
+    transform: translateY(-10px);
+}
+
+/* page about */
+.experience_content .experience_title .sub {
+    font-size: 22px;
+    line-height: 32px;
+    opacity: 0.9;
+    color: var(--head-color);
+    font-weight: 600;
+}
+
+#history {
+    position: relative;
+    background: url(./../img/banner2.jpg) no-repeat center / cover;
+}
+
+#history:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 4, 8, 0.69);
+}
+
+.history_content .title h2 {
+    color: white;
+}
+
+.history_content .title p {
+    color: #fff;
+    opacity: 0.7;
+}
+
+.history_content h6 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
 }
 
 /************************* RESPONSIVE *************************/
