@@ -611,6 +611,14 @@ a.readmore:hover{
     color: white;
 }
 
+.package_item.active .head {
+    padding: 40px 80px;
+}
+
+.package_item.active .content {
+    padding: 80px;
+}
+
 .package_item .saleoff {
     font-size: 15px;
     line-height: 20px;
@@ -648,6 +656,15 @@ a.readmore:hover{
     opacity: .7;
 }
 
+.package_item:not(.active) {
+    padding: 80px;
+}
+
+#videos .video_content {
+    width: 80%;
+    margin: 0 auto;
+}
+
 /************************* RESPONSIVE *************************/
 
 @media screen and (max-width: 1200px) {
@@ -671,6 +688,17 @@ a.readmore:hover{
     }
     .packages_content {        
         width: 90%;
+    }
+    .package_item:not(.active) {
+        padding: 70px;
+    }
+    .package_item.active {
+        padding: 0;
+    }
+    .package_item,
+    .package_item.active .head,
+    .package_item.active .content {
+        padding: 50px;
     }
 }
 
@@ -751,7 +779,7 @@ a.readmore:hover{
 
     .packages_content .package_item {
         width: 100%;
-    }
+    }    
 }
 
 
@@ -805,5 +833,8 @@ a.readmore:hover{
     }
     .packages_content {        
         width: 80%;
+    }
+    .package_item.active .head {
+        padding: 40px;
     }
 }
