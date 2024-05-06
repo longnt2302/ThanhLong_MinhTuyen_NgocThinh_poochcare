@@ -53,19 +53,19 @@ btnSwitch.forEach((btn) => {
 
 let header = document.getElementById("header");
 let backToTop = document.querySelector(".back-to-top");
-$(window).scroll(function () {
-  let $height = $(window).scrollTop();
-  // add class header
-  if ($height > 30) {
-    header.classList.add("fixed");
-  } else {
-    header.classList.remove("fixed");
-  }
 
-  // add class back to top
-  if ($height > 100) {
-    backToTop.classList.add("show");
-  } else {
-    backToTop.classList.remove("show");
-  }
+window.addEventListener("scroll" , function(){
+    let position = this.scrollY;
+    // add class header
+    if( position > 30 ) {
+        header.classList.add("fixed");
+    } else {
+        header.classList.remove("fixed");
+    }
+    // add class back to top
+    if (position > 100) {
+        backToTop.classList.add("show");
+    } else {
+        backToTop.classList.remove("show");
+    }
 });
