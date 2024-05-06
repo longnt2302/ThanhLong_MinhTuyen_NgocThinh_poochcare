@@ -1,11 +1,14 @@
-$(document).ready(function () {
+$(function () {
+  // slide top
   $("#slides .slider").slick({
     dots: true,
     arrows: false,
   });
 
+  //   countup number
   $(".count_num").countUp();
 
+  //   slider testimonials
   $("#testimonials .testimonials_carousel").slick({
     dots: true,
     slidesToShow: 2,
@@ -39,13 +42,14 @@ $(document).ready(function () {
   });
 });
 
-let btnSwitch = document.querySelectorAll('.theme-toggle');
+let btnSwitch = document.querySelectorAll(".theme-toggle");
 let currentTheme = document.querySelector("html");
-for (var i = 0; i < btnSwitch.length; i++) {
-    btnSwitch[i].addEventListener('click', function(event) {
-          currentTheme.dataset.theme = currentTheme.dataset.theme === "light" ? "dark" : "light";
-    });
-}
+btnSwitch.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    currentTheme.dataset.theme =
+      currentTheme.dataset.theme === "light" ? "dark" : "light";
+  });
+});
 
 let header = document.getElementById("header");
 let backToTop = document.querySelector(".back-to-top");
