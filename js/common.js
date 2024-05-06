@@ -1,76 +1,67 @@
-$(document).ready(function(){
-    $.fn.clickToggle = function(func1, func2) {
-        var funcs = [func1, func2];
-        this.data('toggleclicked', 0);
-        this.click(function() {
-            var data = $(this).data();
-            var tc = data.toggleclicked;
-            $.proxy(funcs[tc], this)();
-            data.toggleclicked = (tc + 1) % 2;
-        });
-        return this;
-    };
-    $(window).scroll(function() {
-        var $height = $(window).scrollTop();
-        // add class header
-        if( $height > 30 ) {
-            $('#header').addClass('fixed');
-        } else {
-            $('#header').removeClass('fixed');
-        }
-        // add class back to top
-        if( $height > 100 ) {
-            $('.back-to-top').addClass('show');
-        } else {
-            $('.back-to-top').removeClass('show');
-        }
+$(document).ready(function () {
+  $("#slides .slider").slick({
+    dots: true,
+    arrows: false,
+  });
 
-    });
-    $('.theme-toggle').clickToggle(
-        function() {
-            $('html').attr('data-theme' , 'dark');
+  $(".count_num").countUp();
+
+  $("#testimonials .testimonials_carousel").slick({
+    dots: true,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: true,
         },
-        function() {
-            $('html').attr('data-theme' , 'light');
-        }
-    );
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+        },
+      },
+    ],
+  });
+});
 
-    $('#slides .slider').slick({
-        dots: true,
+let btnSwitch = document.querySelectorAll('.theme-toggle');
+let currentTheme = document.querySelector("html");
+for (var i = 0; i < btnSwitch.length; i++) {
+    btnSwitch[i].addEventListener('click', function(event) {
+          currentTheme.dataset.theme = currentTheme.dataset.theme === "light" ? "dark" : "light";
     });
+}
 
-    $('.count_num').countUp();
+let header = document.getElementById("header");
+let backToTop = document.querySelector(".back-to-top");
+$(window).scroll(function () {
+  let $height = $(window).scrollTop();
+  // add class header
+  if ($height > 30) {
+    header.classList.add("fixed");
+  } else {
+    header.classList.remove("fixed");
+  }
 
-    $('#testimonials .testimonials_carousel').slick({
-        dots: true,
-        slidesToShow: 2,
-        slidesToScroll: 2,
-        arrows: false,
-        responsive: [
-            {
-              breakpoint: 1024,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                dots: true
-              }
-            },
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1
-              }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                  slidesToShow: 1,
-                  slidesToScroll: 1,
-                  dots: false,
-                }
-              }
-          ]
-    });
-
+  // add class back to top
+  if ($height > 100) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
 });
