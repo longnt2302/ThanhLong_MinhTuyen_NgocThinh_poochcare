@@ -713,7 +713,11 @@ iframe {
     transform: translate(-50%,-50%) scale(1.2);
 }
 
-.modal1 .modal-dialog {
+.modal .modal-content {
+    border: none;
+}
+
+.modal .modal-dialog {
     max-width: 750px;
 }
 
@@ -1085,11 +1089,12 @@ a.back-to-top:hover i {
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
     height: 100%;
+    width: 100%;
     transition: .3s all;
 }
 
 #modal-search .modal-content button:hover {
-    opacity: .7;
+    opacity: .8;
 }
 
 /************************* RESPONSIVE *************************/
