@@ -27,13 +27,13 @@
 }
 
 .posts_item{
-    background-color: white;
+    background-color: var(--bg-color);
     border-radius: 8px;
+    transition: .3s all;
 }
 
 .posts_item:hover{
     transform: translateY(-0.5rem);
-    transition: .3s ease;
 }
 
 
@@ -46,21 +46,22 @@
     font-size: 26px;
     line-height: 34px;
     font-weight: 600;
-    color: black;
+    color: var(--head-color);
     margin-bottom: 6px;
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
     text-transform: capitalize;
     transition: all 0.3s;
 }
 
-.delivering:hover{  
+.delivering:hover{
     color: green;
 }
 
 
 .w3layouts{
-    color: black;
+    color: var(--head-color);
     font-weight: 400;
     font-size: 18px;
     line-height: 28px;
