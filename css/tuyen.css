@@ -1,0 +1,33 @@
+/* Service */
+#services_1 .image img {
+  width: 100%;
+}
+
+.services_content .content p {
+  font-size: 1em;
+}
+
+.services_content .content ul li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.services_content .content ul li:before {
+  content: "\f00c";
+  font-family: FontAwesome;
+  font-size: 10px;
+  color: var(--primary-color);
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 100%;
+  background-color: var(--bg-light);
+  margin-right: 10px;
+}
+
+/* Gallery  */
+.gallery_image .image img {
+}
