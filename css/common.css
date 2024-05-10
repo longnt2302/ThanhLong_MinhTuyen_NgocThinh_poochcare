@@ -7,6 +7,7 @@
     --head-color: #000c04;
     --subhead-color: #e60000;
     --bg-light: rgba(147, 107, 232, 0.05);
+    --border-light: #f0f3f0;
 }
 
 [data-theme="dark"] {
@@ -15,6 +16,7 @@
     --text-color: #afafaf;
     --heading-color: #ddd;
     --head-color: #ddd;
+    --border-light: #444;
 }
 
 /* common */
