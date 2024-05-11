@@ -43,6 +43,24 @@ body {
     max-width: 1200px;
 }
 
+@media screen and (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
 .bg_light {
     background-color: var(--bg-light);
 }
@@ -241,6 +259,11 @@ iframe {
 
 .extend .theme-toggle {
     color: var(--head-color);
+}
+
+#header .navbar .nav-item .dropdown-item.active {
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
 /* breadcrumb */
@@ -894,7 +917,7 @@ div#modal-video.show:before {
 }
 
 .contact_form form button {
-    padding: 15px 35px;
+    padding: 15px 30px;
     font-size: 18px;
     line-height: 28px;
     text-transform: capitalize;
@@ -1124,7 +1147,7 @@ a.back-to-top:hover i {
         width: 90%;
     }
     .package_item:not(.active) {
-        padding: 70px;
+        padding: 60px;
     }
     .package_item.active {
         padding: 0;
