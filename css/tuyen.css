@@ -29,5 +29,68 @@
 }
 
 /* Gallery  */
-.gallery_image .image img {
+.item {
+  position: relative;
+  overflow: hidden;
+}
+.item::before {
+  content: "";
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: -100%;
+  display: block;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+  transition: all 0.75s;
+}
+
+.item:hover::before {
+  left: 125%;
+}
+.close {
+  float: right;
+  opacity: 0.5;
+  text-align: right;
+  outline: none;
+}
+.close:hover {
+  opacity: 1;
+}
+
+.danger {
+  color: red;
+}
+
+/* Reponsive  */
+@media screen and (max-width: 1200px) {
+  #gallery .gallery_content {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #gallery .gallery_content {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  #gallery .gallery_content {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #gallery .gallery_content {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  #gallery .col_galley .col-sm {
+    margin-bottom: 40px;
+  }
 }
